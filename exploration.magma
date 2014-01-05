@@ -17,3 +17,8 @@ die := [1,2,3,5,4,6];
 
 S6 := SymmetricGroup(6);
 Cube := sub< S6 | (2, 3, 4, 5), (1, 2, 6, 4) >;
+
+function image(anDie, element)
+  inverse := element^-1;
+  return [ anDie[i ^ inverse] : i in [1..6] ];
+end function;
