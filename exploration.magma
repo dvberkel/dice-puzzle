@@ -70,3 +70,12 @@ function pipCount(aCube)
     aCube[1][6] + aCube[2][6] + aCube[3][6] + aCube[4][6]
   ];
 end function;
+
+function valid(pips)
+  return
+    pips[1] eq pips[2] and
+    pips[2] eq pips[3] and
+    pips[3] eq pips[4] and
+    pips[4] eq pips[5] and
+    pips[5] eq pips[6];
+end function;
