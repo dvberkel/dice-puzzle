@@ -16,11 +16,11 @@
 die := [1,2,3,5,4,6];
 
 S6 := SymmetricGroup(6);
-CubeGroup := sub< S6 | (2, 3, 4, 5), (1, 2, 6, 4) >;
+C := sub< S6 | (2, 3, 4, 5), (1, 2, 6, 4) >;
 
-function image(anDie, element)
+function image(aDie, element)
   inverse := element^-1;
-  return [ anDie[i ^ inverse] : i in [1..6] ];
+  return [ aDie[i ^ inverse] : i in [1..6] ];
 end function;
 
 /*
@@ -48,3 +48,5 @@ end function;
  *
  */
 cube := [ die, die, die, die, die, die, die, die ];
+
+CubeGroup := CartesianProduct([ C : index in cube ]);
