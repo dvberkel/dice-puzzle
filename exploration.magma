@@ -16,9 +16,35 @@
 die := [1,2,3,5,4,6];
 
 S6 := SymmetricGroup(6);
-Cube := sub< S6 | (2, 3, 4, 5), (1, 2, 6, 4) >;
+CubeGroup := sub< S6 | (2, 3, 4, 5), (1, 2, 6, 4) >;
 
 function image(anDie, element)
   inverse := element^-1;
   return [ anDie[i ^ inverse] : i in [1..6] ];
 end function;
+
+/*
+ * We will represent an 2x2x2 cube as an array of dice. Below is a
+ * representation relating the index of the array the position in the
+ * 2x2x2 cube.
+ *
+ * Bottom level:
+ *  _____ _____
+ * |     |     |
+ * |  1  |  2  |
+ * |_____|_____|
+ * |     |     |
+ * |  4  |  3  |
+ * |_____|_____|
+ *
+ * Top level:
+ *  _____ _____
+ * |     |     |
+ * |  5  |  6  |
+ * |_____|_____|
+ * |     |     |
+ * |  8  |  7  |
+ * |_____|_____|
+ *
+ */
+cube := [ die, die, die, die, die, die, die, die ];
