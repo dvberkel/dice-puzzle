@@ -1,0 +1,16 @@
+/*
+ * We will represent a die as an array. Below is a diagram relating
+ * the indices of the array with the corresponding face of the die.
+ *  _____
+ * |     |
+ * |  1  |
+ * |_____|_____ _____ _____
+ * |     |     |     |     |
+ * |  2  |  3  |  4  |  5  |
+ * |_____|_____|_____|_____|
+ *                   |     |
+ *                   |  6  |
+ *                   |_____|
+ *
+ */
+die := [1,2,3,5,4,6];
