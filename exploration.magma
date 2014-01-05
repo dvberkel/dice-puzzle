@@ -79,3 +79,19 @@ function valid(pips)
     pips[4] eq pips[5] and
     pips[5] eq pips[6];
 end function;
+
+procedure run(tick)
+  max := 24^8;
+  count := 0;
+  for g in CubeGroup do
+    candidate := cubeImage(cube, g);
+    if (count mod tick eq 0) then
+      PrintFile("progress.txt", [count, max], "Minimal");
+    end if;
+    pips := pipCount(candidate);
+    if (valid(pips)) then
+      PrintFile("solutions.txt", candidate, "Minimal");
+    end if;
+    count +:= 1;
+  end for;
+end procedure;
