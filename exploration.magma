@@ -54,3 +54,19 @@ CubeGroup := CartesianProduct([ C : index in cube ]);
 function cubeImage(aCube, cartesianElement)
   return [ image(aCube[i], cartesianElement[i]) : i in [1..8] ];
 end function;
+
+/*
+ * The pip count uses the same representation as the die and sums
+ * the numbers of pips for that face.
+ *
+ */
+function pipCount(aCube)
+  return [
+    aCube[5][1] + aCube[6][1] + aCube[7][1] + aCube[8][1],
+    aCube[3][2] + aCube[4][2] + aCube[7][2] + aCube[8][2],
+    aCube[2][3] + aCube[3][3] + aCube[6][3] + aCube[7][3],
+    aCube[1][4] + aCube[2][4] + aCube[5][4] + aCube[6][4],
+    aCube[1][5] + aCube[4][5] + aCube[5][5] + aCube[8][5],
+    aCube[1][6] + aCube[2][6] + aCube[3][6] + aCube[4][6]
+  ];
+end function;
