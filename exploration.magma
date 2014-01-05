@@ -50,3 +50,7 @@ end function;
 cube := [ die, die, die, die, die, die, die, die ];
 
 CubeGroup := CartesianProduct([ C : index in cube ]);
+
+function cubeImage(aCube, cartesianElement)
+  return [ image(aCube[i], cartesianElement[i]) : i in [1..8] ];
+end function;
